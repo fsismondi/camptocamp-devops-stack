@@ -1,0 +1,31 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://devops-stack.io"><img width="200px" src="/images/devops-stack-logo_light_by_c2c_black.png"/></a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+      {{#if env.DOCSEARCH_ENABLED}}
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
+      {{/if}}
+        <a class="navbar-item" href="https://github.com/camptocamp/devops-stack"><i class="fa fa-github-alt"></i>&nbsp;GitHub</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://terraboard.io">Terraboard</a>
+            <a class="navbar-item" href="https://bivac.io">Bivac</a>
+            <a class="navbar-item" href="https://camptocamp.github.io/facterdb">FacterDB</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="https://camptocamp.com">Camptocamp</a>
+      </div>
+    </div>
+  </nav>
+</header>
