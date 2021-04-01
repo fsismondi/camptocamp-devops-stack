@@ -38,10 +38,16 @@ You can generate the doc using the docker image of antora and put it in a local 
 [source]
 ----
 cd devops-stack
-docker run --rm -it --user $(id -u) -v $PWD:/tmp/docs \
--e FORCE_SHOW_EDIT_PAGE_LINK=true -e CI=true \
-docker.io/antora/antora:2.3.4 generate /tmp/docs/antora-playbook.yml \
---to-dir /tmp/docs/docs/output --cache-dir=./.cache
+
+# build the image
+docker build -t antora_doc docs/
+
+# run container for building the doc
+docker run --user $(id -u) -v $PWD:/antora/docs \
+ --rm antora_doc generate /antora/docs/antora-playbook.yml \
+ --generator antora-site-generator-lunr \
+ --to-dir /antora/docs/docs/output --cache-dir=./.cache
+
 ----
 
 Then to visualize your result you can open your browser with the following command:
