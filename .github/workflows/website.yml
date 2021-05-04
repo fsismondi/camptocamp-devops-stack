@@ -41,6 +41,8 @@ jobs:
         uses: fsismondi/antora-site-action@master
         with:
           antora_playbook: antora-playbook.yml
+          antora_search_bar: "true"
+          antora_generator: "@antora/site-generator-default"
       - name: "List folder"
         run: |
           ls -ltr $GITHUB_WORKSPACE/build/
