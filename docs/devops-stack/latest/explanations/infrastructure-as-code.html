@@ -25,9 +25,6 @@
     </div>    
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <div class="navbar-item">
-          <input id="search-input" type="text" placeholder="Search docs">
-        </div>
         <a class="navbar-item" href="https://github.com/camptocamp/devops-stack"><i class="fa fa-github-alt"></i>&nbsp;GitHub</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
@@ -110,6 +107,9 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">References</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../references/architecture.html">Architecture</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../references/authentication.html">Authentication</a>
   </li>
@@ -255,7 +255,7 @@
     <li><a href="infrastructure-as-code.html">Infrastructure As Code</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/fsismondi/devops-stack/edit/doc_test_build/docs/modules/ROOT/pages/explanations/infrastructure-as-code.adoc"><i class="fa fa-github-alt"></i>&nbsp;Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/fsismondi/devops-stack/edit/master/docs/modules/ROOT/pages/explanations/infrastructure-as-code.adoc"><i class="fa fa-github-alt"></i>&nbsp;Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -301,9 +301,6 @@ using <a href="gitops.html" class="page">Continuous Deployment</a> in a GitOps a
   window.antora.pagePath = '/devops-stack/latest/explanations/infrastructure-as-code.html'
 </script>
 <script src="../../../_/js/site.js"></script>
-<script src="../../../_/js/vendor/lunr.js"></script>
-<script src="../../../_/js/vendor/search.js"></script>
-<script async src="../../../_/../search-index.js"></script>
 <script async src="../../../_/js/vendor/terraform.js"></script>
 <script async src="../../../_/js/vendor/highlight.js"></script>
   </body>
