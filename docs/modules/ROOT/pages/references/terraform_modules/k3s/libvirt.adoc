@@ -134,7 +134,7 @@ object({
 |[[input_repo_url]] <<input_repo_url,repo_url>>
 |The source repo URL of ArgoCD's app of apps.
 |`string`
-|`"https://github.com/camptocamp/devops-stack.git"`
+|`"https://github.com/fsismondi/devops-stack.git"`
 |no
 
 |[[input_server_memory]] <<input_server_memory,server_memory>>

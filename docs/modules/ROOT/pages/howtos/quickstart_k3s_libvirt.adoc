@@ -27,7 +27,7 @@ include::partial$terraform_instant_intro.adoc[]
 
 ```hcl
 module "cluster" {
-  source = "git::https://github.com/camptocamp/devops-stack.git//modules/k3s/libvirt?ref=master"
+  source = "git::https://github.com/fsismondi/devops-stack.git//modules/k3s/libvirt?ref=testing"
 
   cluster_name = "my-cluster"
   node_count   = 2

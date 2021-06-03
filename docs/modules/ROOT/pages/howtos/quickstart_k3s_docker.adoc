@@ -12,7 +12,7 @@ include::partial$terraform_instant_intro.adoc[]
 
 ```hcl
 module "cluster" {
-  source = "git::https://github.com/camptocamp/devops-stack.git//modules/k3s/docker?ref=master"
+  source = "git::https://github.com/fsismondi/devops-stack.git//modules/k3s/docker?ref=testing"
 
   cluster_name = "my-cluster"
 }
@@ -23,7 +23,7 @@ You can specify the published ports of the K3S master and the base domain to use
 
 ```hcl
 module "cluster" {
-  source = "git::https://github.com/camptocamp/devops-stack.git//modules/k3s/docker?ref=master"
+  source = "git::https://github.com/fsismondi/devops-stack.git//modules/k3s/docker?ref=testing"
 
   cluster_name = "my-cluster"
   cluster_endpoint = "192-168-1-118.nip.io"
