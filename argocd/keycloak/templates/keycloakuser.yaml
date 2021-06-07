@@ -19,10 +19,13 @@ spec:
       - temporary: false
         type: password
         value: {{ .Values.keycloakUser.password }}
+    realmRoles:
+      - "offline_access"
     clientRoles:
       account:
-        - manage-account
-        - view-profile
+        - "manage-account"
+      realm-management:
+        - "manage-users"
   realmSelector:
     matchLabels:
       app: sso
