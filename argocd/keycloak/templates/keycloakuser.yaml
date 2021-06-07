@@ -22,6 +22,7 @@ spec:
     clientRoles:
       account:
         - manage-account
+        - view-profile
   realmSelector:
     matchLabels:
       app: sso
