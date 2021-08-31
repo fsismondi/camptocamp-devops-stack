@@ -37,11 +37,9 @@ jobs:
         with:
           fetch-depth: 0   # Fetch all history for .gitinfo and .lastmod
       - name: "Generate site using antora site action"
-        uses: fsismondi/antora-site-action@master
+        uses: ghost-420/antora-lunr-site-action@cc1c9e1b28e790816e49de6ae58f442ef119e6a2
         with:
           antora_playbook: antora-playbook.yml
-          antora_search_bar: "true"
-          antora_generator: "antora-site-generator-lunr"
       - name: "List folder"
         run: |
           ls -ltr $GITHUB_WORKSPACE/build/
