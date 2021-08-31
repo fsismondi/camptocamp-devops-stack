@@ -6,6 +6,7 @@ on:
       - test
 env:
   SITE_DIR: 'site'
+  ASGL: "antora-site-generator-lunr" # required for ghost-420/antora-lunr-site-action
 jobs:
   build_site:
     name: "Build main site with Hugo"
@@ -40,7 +41,6 @@ jobs:
         uses: ghost-420/antora-lunr-site-action@cc1c9e1b28e790816e49de6ae58f442ef119e6a2
         with:
           antora_playbook: antora-playbook.yml
-          ASGL: "antora-site-generator-lunr"
       - name: "List folder"
         run: |
           ls -ltr $GITHUB_WORKSPACE/build/
