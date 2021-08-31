@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>keycloak :: DevOps Stack</title>
+    <title>Untitled :: DevOps Stack</title>
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -88,6 +88,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines.html">Deploying with Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_gitlab.html">Create your GitLab Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_github.html">Create your Github Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_terraform_resource_migration.html">Operating terraform state using Pipeline</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#ROOT:howtos/contributions.adoc">Contribution</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -98,6 +116,18 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/release.html">Release a new version</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deploy Your App</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/deploy_own_app.html">Deploy Your App</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
   </li>
 </ul>
   </li>
@@ -184,9 +214,6 @@
     <a class="nav-link" href="vault.html">Vault</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../changelog.html">Changelog</a>
   </li>
 </ul>
   </li>
@@ -309,54 +336,7 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">keycloak</h1>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This chart is enabled only when deploying DevOps Stack to clouds not providing OIDC out of the box.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>This chart installs Keycloak for the identity and access management. It
-handles:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>installation and configuration of Keycloak</p>
-</li>
-<li>
-<p>creation <code>kubernetes</code> realm and <code>admin</code> user account under
-<code>kubernetes</code> realm</p>
-</li>
-<li>
-<p>adds the following DevOps stack apps as clients to OAuth2/OIDC
-authentication server:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>argocd<br></p>
-</li>
-<li>
-<p>grafana</p>
-</li>
-<li>
-<p>prometheus</p>
-</li>
-<li>
-<p>alertmanager</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+
 </article>
   </div>
 </main>

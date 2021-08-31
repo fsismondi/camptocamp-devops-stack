@@ -88,6 +88,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines.html">Deploying with Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_gitlab.html">Create your GitLab Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_github.html">Create your Github Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_terraform_resource_migration.html">Operating terraform state using Pipeline</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#ROOT:howtos/contributions.adoc">Contribution</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -98,6 +116,18 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="release.html">Release a new version</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deploy Your App</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="deploy_own_app.html">Deploy Your App</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
   </li>
 </ul>
   </li>
@@ -184,9 +214,6 @@
     <a class="nav-link" href="../references/applications/vault.html">Vault</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../references/changelog.html">Changelog</a>
   </li>
 </ul>
   </li>
@@ -327,6 +354,12 @@
 <li>
 <p>Minimal Terraform version: 0.14</p>
 </li>
+<li>
+<p><code>jq</code> binary</p>
+</li>
+<li>
+<p><a href="https://argoproj.github.io/argo-cd/cli_installation/">argocd</a> CLI</p>
+</li>
 </ul>
 </div>
 </div>
@@ -342,7 +375,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl">module "cluster" {
+<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl"># terraform/main.tf
+
+module "cluster" {
   source = "git::https://github.com/camptocamp/devops-stack.git//modules/k3s/docker?ref=master"
 
   cluster_name = "my-cluster"
@@ -355,7 +390,9 @@ You can specify the published ports of the K3S master and the base domain to use
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl">module "cluster" {
+<pre class="highlightjs highlight"><code class="language-hcl hljs" data-lang="hcl"># terraform/main.tf
+
+module "cluster" {
   source = "git::https://github.com/camptocamp/devops-stack.git//modules/k3s/docker?ref=master"
 
   cluster_name = "my-cluster"
@@ -486,19 +523,6 @@ account with the password previously retrieved.</p>
 <div class="paragraph">
 <p>The keycloak dashboard uses the <code>kubernetes</code> realm. You can log in to it using
 the <code>/auth/realms/kubernetes/account/</code> path with the Keycloak ingress.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-there is currently an issue when accessing applications
-and login details in Keycloak.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>

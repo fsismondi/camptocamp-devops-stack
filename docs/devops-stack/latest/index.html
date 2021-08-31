@@ -88,6 +88,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/pipelines.html">Deploying with Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/pipelines_gitlab.html">Create your GitLab Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/pipelines_github.html">Create your Github Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/pipelines_terraform_resource_migration.html">Operating terraform state using Pipeline</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#ROOT:howtos/contributions.adoc">Contribution</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -98,6 +116,18 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="howtos/release.html">Release a new version</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deploy Your App</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/deploy_own_app.html">Deploy Your App</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
   </li>
 </ul>
   </li>
@@ -184,9 +214,6 @@
     <a class="nav-link" href="references/applications/vault.html">Vault</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="references/changelog.html">Changelog</a>
   </li>
 </ul>
   </li>
@@ -357,6 +384,246 @@ and available on <a href="https://github.com/camptocamp/devops-stack.git">GitHub
 <div class="paragraph">
 <p>This documentation is inspired by the <a href="https://documentation.divio.com/structure/">Divio documentation structure</a>. It is written in <a href="https://asciidoc.org/">Asciidoc</a> and built using <a href="https://antora.org/">Antora</a>. All the details related to the documentation are available on the <a href="explanations/documentation.html" class="page">Docs as Code</a> page.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compatibility_matrix"><a class="anchor" href="#_compatibility_matrix"></a>Compatibility matrix</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The devops-stack is above all a Kubernetes cluster - one of the following distributions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>K3s</p>
+</li>
+<li>
+<p>Azure AKS</p>
+</li>
+<li>
+<p>AWS EKS</p>
+</li>
+<li>
+<p>AWS OpenShift (IPI)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>And the following components deployed in the cluster:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">K3s</th>
+<th class="tableblock halign-left valign-top">Azure AKS</th>
+<th class="tableblock halign-left valign-top">AWS EKS</th>
+<th class="tableblock halign-left valign-top">AWS OpenShift (IPI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Cert-Manager</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/cert-manager.png" alt="Cert-Manager" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>no</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>OpenID Connect</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/oidc.png" alt="OpenID Connect" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>keycloak</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Azure Active Directory</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>AWS Cognito</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>AWS Cognito</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Ingress</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/ingress.png" alt="Ingress" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Traefik</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Traefik</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Traefik</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Openshift routers (embedded)</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Argo CD</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/argocd.png" alt="Argo CD" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Prometheus</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/prometheus.png" alt="Prometheus" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Openshift embedded</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Grafana</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/grafana.png" alt="Grafana" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Openshift embedded</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Loki</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/loki.png" alt="Loki" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>no</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Alertmanager</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Openshift embedded</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>Thanos</code></p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="_images/logo/thanos.png" alt="Thanos" width="50" height="50">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>yes</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>no</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>no</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>no</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>

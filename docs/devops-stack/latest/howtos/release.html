@@ -88,6 +88,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines.html">Deploying with Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_gitlab.html">Create your GitLab Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_github.html">Create your Github Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pipelines_terraform_resource_migration.html">Operating terraform state using Pipeline</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#ROOT:howtos/contributions.adoc">Contribution</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -98,6 +116,18 @@
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="release.html">Release a new version</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deploy Your App</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="deploy_own_app.html">Deploy Your App</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
   </li>
 </ul>
   </li>
@@ -184,9 +214,6 @@
     <a class="nav-link" href="../references/applications/vault.html">Vault</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../references/changelog.html">Changelog</a>
   </li>
 </ul>
   </li>
@@ -313,63 +340,48 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Update <code>docs/modules/ROOT/pages/references/changelog.adoc</code></p>
-</li>
-<li>
-<p>Update the version number (e.g. <code>v0.29.0</code>) in the following files (mandatory):</p>
+<p>Update and merge the Pull Request with label <code>autorelease:pending</code> managed by <a href="https://github.com/googleapis/release-please">Release Please</a>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/docs/antora.yml#L4">docs/antora.yml</a></p>
+<p>checkout <code>release-vX.Y.Z</code> branch</p>
 </li>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/site/config.toml#L18">site/config.toml</a></p>
+<p>set <code>version</code> to <code>X.Y.Z</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/docs/antora.yml#L4">docs/antora.yml</a></p>
 </li>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/.gitlab-ci/pipeline.yaml">.gitlab-ci/pipeline.yaml</a></p>
+<p>set <code>target_revision</code> 's default to <code>vX.Y.Z</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/modules/variables.tf">modules/variables.tf</a></p>
 </li>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/modules/variables.tf">modules/variables.tf</a></p>
+<p>set <code>version</code> in <code>[params]</code> section to <code>X.Y.Z</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/site/config.toml#L18">site/config.toml</a></p>
+</li>
+<li>
+<p>amend the commit</p>
+</li>
+<li>
+<p>push force the branch</p>
+</li>
+<li>
+<p>merge the PR</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Optionally update the version number in the following files:</p>
+<p>Create and merge a Pull Request with:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/examples/eks-aws/.gitlab-ci.yml">examples/eks-aws/.gitlab-ci.yml</a></p>
+<p>subject can be something like: <code>chore: create post-release commit</code></p>
 </li>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/modules/eks-aws/main.tf">examples/eks-aws/terraform/main.tf</a></p>
+<p><code>version</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/docs/antora.yml#L4">docs/antora.yml</a> set back to <code>latest</code></p>
 </li>
 <li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/modules/k3o-libvirt/main.tf">examples/k3s-libvirt-demo-app/terraform/main.tf</a></p>
-</li>
-<li>
-<p><a href="https://github.com/camptocamp/devops-stack/blob/master/modules/k3s-docker/main.tf">examples/k3s-docker-demo-app/terraform/main.tf</a></p>
+<p><code>target_revision</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/modules/variables.tf#15">modules/variables.tf</a> set back to <code>master</code></p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Create a pull request with the updated version. Once it has been reviewed and approved, merge it to <code>master</code></p>
-</li>
-<li>
-<p>Tag the merged commit (e.g. <code>v0.29.0</code>)</p>
-</li>
-<li>
-<p>Push the tag</p>
-</li>
-<li>
-<p>Create a new <a href="https://github.com/camptocamp/devops-stack/releases">release</a> via the GitHub release page, naming it the same as the version number - e.g. <code>v0.29.0</code>. Ensure to state what&#8217;s new in the release</p>
-</li>
-<li>
-<p>Set back the release to <code>latest</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/docs/antora.yml#L4">docs/antora.yml</a></p>
-</li>
-<li>
-<p>Set back the target_revision to <code>master</code> in <a href="https://github.com/camptocamp/devops-stack/blob/master/modules/variables.tf#15">modules/variables.tf</a></p>
 </li>
 </ul>
 </div>

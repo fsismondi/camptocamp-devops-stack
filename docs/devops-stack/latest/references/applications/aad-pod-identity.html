@@ -88,6 +88,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines.html">Deploying with Pipelines</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_gitlab.html">Create your GitLab Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_github.html">Create your Github Pipeline</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/pipelines_terraform_resource_migration.html">Operating terraform state using Pipeline</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="#ROOT:howtos/contributions.adoc">Contribution</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
@@ -98,6 +116,18 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/release.html">Release a new version</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deploy Your App</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/deploy_own_app.html">Deploy Your App</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
   </li>
 </ul>
   </li>
@@ -184,9 +214,6 @@
     <a class="nav-link" href="vault.html">Vault</a>
   </li>
 </ul>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../changelog.html">Changelog</a>
   </li>
 </ul>
   </li>
@@ -350,7 +377,7 @@ Kubernetes applications.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts" class="bare">https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aad-pod-identity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.1.1</p></td>
 </tr>
 </tbody>
 </table>
@@ -378,7 +405,7 @@ Kubernetes applications.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">aad-pod-identity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">object</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{"forceNameSpaced":true,"mic":{"prometheusPort":8888,"resources":{"limits":{"memory":"32Mi"},"requests":{"memory":"16Mi"}}},"nmi":{"prometheusPort":9090,"resources":{"limits":{"memory":"32Mi"},"requests":{"memory":"16Mi"}}}}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>{"forceNamespaced":true,"mic":{"prometheusPort":8888,"resources":{"limits":{"memory":"32Mi"},"requests":{"memory":"16Mi"}}},"nmi":{"prometheusPort":9090,"resources":{"limits":{"memory":"32Mi"},"requests":{"memory":"16Mi"}}}}</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Values passed to the add-pod-identity chart</p></td>
 </tr>
 </tbody>
