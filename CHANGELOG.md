@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.46.0](https://www.github.com/fsismondi/devops-stack/compare/v0.45.0...v0.46.0) (2021-09-06)
+
+
+### Features
+
+* **aks:** add support for node pools in AKS ([edb9813](https://www.github.com/fsismondi/devops-stack/commit/edb981339ef566e21ae16338bc7e6c17699da9d9))
+* randomize argocd admin password ([1cf91f0](https://www.github.com/fsismondi/devops-stack/commit/1cf91f0aee30d369bc8ea8d0ad2a43c714c18a70))
+* **sks:** add node anti-affinity on router nodes for cert-manager ([#753](https://www.github.com/fsismondi/devops-stack/issues/753)) ([dc3a4a3](https://www.github.com/fsismondi/devops-stack/commit/dc3a4a35f6b1250d852440d165b3775ce700aa6d))
+* **sks:** use Kubernetes 1.21.4 by default ([a95d813](https://www.github.com/fsismondi/devops-stack/commit/a95d8135e962a03bf2a12845815af1af94cc2469))
+* **sks:** use letsencrypt-prod when there is more than 1 node pool ([#754](https://www.github.com/fsismondi/devops-stack/issues/754)) ([0f8179c](https://www.github.com/fsismondi/devops-stack/commit/0f8179c0d83654442e658ead302ffd5f995a563d))
+
+
+### Bug Fixes
+
+* **sks:** pass down missing variables to argocd-helm ([#748](https://www.github.com/fsismondi/devops-stack/issues/748)) ([97f3973](https://www.github.com/fsismondi/devops-stack/commit/97f397369e558c0b7a32841cedded4027214f8c5))
+
 ## [0.45.0](https://www.github.com/camptocamp/devops-stack/compare/v0.44.0...v0.45.0) (2021-08-27)
 
 
