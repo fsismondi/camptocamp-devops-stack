@@ -1,0 +1,55 @@
+= Part 4: Continuous Deployment
+
+This document walks you through the process of setting up a continuously deployed web app into the cluster.
+
+== Continuous deployment with ArgoCD UI
+
+demo: Argo UI for deploying helm app, add argo cd screenshot / movie
+
+doc: A diagram here it would be nice
+
+```
+
++---------------+
+|               |                    +----------------+
+|               |     instanciates   |                |
+| devops stack  +------------------->|   k8s cluster  |
+|    code       |                    |                |
+|               |                    |                |
+|               |                    +-----------+    |
++---------------+                    |           |    |
+                            +--------+   argo    |    |
+                            |        +-----------+----+
+                            |               ^
+                            |      repo     |
+                            |    polling    |
+                            |               |
+                            v               |
+                  +----------------+        |
+                  |                |        |
+                  |   git repo     +--------+
+                  |   Helm app     |
+                  |                |
+                  +----------------+
+                  
+```
+
+== Continuous deployment, the gitOps way
+
+ref: explanations/git ops
+
+motivation: what happens if we redeploy cluster? we would lose your app as this was handled from within argoCD UI
+
+demo: how to gitops with devops stack
+
+== Update Deployment: Application Management
+
+demo: Update helm values for changing app config (e.g. change config file content, see outcome in web app UI )
+
+== Update Deployment: Infrastructure Management
+
+demo: Update helm values for changing the number of Pods of frontend/backend deployment
+
+== Sections
+
+include::partial$tutorial_parts.adoc[]

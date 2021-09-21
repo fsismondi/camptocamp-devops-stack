@@ -1,0 +1,15 @@
+= Part 3: Deploying a web app
+
+This document walks you through deploying a backend/frontend app in the cluster.
+
+== Example of a web app
+
+demo: clone containers-course-app; screen shot UI
+
+== Deploying an example web app
+
+demo: instantiating the web app with helm 
+
+== Sections
+
+include::partial$tutorial_parts.adoc[]

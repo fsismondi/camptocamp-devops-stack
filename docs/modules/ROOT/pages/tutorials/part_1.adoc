@@ -1,0 +1,24 @@
+= Part 1: Kubernetes cluster
+
+This documents walk you through the process of creating a cluster into your workstation using k3s and docker.
+
+== Creating the project
+
+answers: where should this code live?, what do you put in the terraform module? 
+ref: "How to gitlab/github pipeline" 
+
+== Instantiating the cluster
+
+demo: terraform apply, terraform output
+ref "What other things does the DevOps stack module can create for me?"  
+ref "What other things are normally created when creating your cluster?" link: e.g Azure postgreSQL terraform.io/docs.
+
+== Ping Kubernetes
+
+demo: kubectl 
+demo: k9s 
+
+
+== Sections
+
+include::partial$tutorial_parts.adoc[]

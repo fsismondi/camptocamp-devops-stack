@@ -1,0 +1,19 @@
+= Part 5: Monitoring
+
+This document walks you through the features provided out-of-the-box by the DevOps Stack for monitoring the web app and the infrastructure
+
+== Grafana
+
+demo/screenshot
+
+== Loki
+
+demo/screenshot
+
+== Adding a custom metric with Prometheus
+
+demo
+
+== Sections
+
+include::partial$tutorial_parts.adoc[]

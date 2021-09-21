@@ -1,0 +1,19 @@
+= Part 2: Hello World with Kubernetes
+
+This document walks you though the creation of a first Hello World container/pod in the cluster.
+
+== Writing the Hello World app
+
+demo: create a deployment and a service file 
+
+== Deploying the app
+
+demo: deploy with kubectl, explore pod logs with k9s
+
+== Templating your app with Helm
+
+demo: modifying hello world message with a template
+
+== Sections
+
+include::partial$tutorial_parts.adoc[]

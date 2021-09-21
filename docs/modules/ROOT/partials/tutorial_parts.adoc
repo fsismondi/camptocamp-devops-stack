@@ -1,0 +1,5 @@
+** xref:ROOT:tutorials/part_1.adoc[Part 1: Kubernetes cluster]
+** xref:ROOT:tutorials/part_2.adoc[Part 2: Hello Kubernetes]
+** xref:ROOT:tutorials/part_3.adoc[Part 3: Deploying an app]
+** xref:ROOT:tutorials/part_4.adoc[Part 4: Cont. Deployment]
+** xref:ROOT:tutorials/part_5.adoc[Part 5: Monitoring]
