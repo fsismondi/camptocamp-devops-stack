@@ -25,6 +25,9 @@
     </div>    
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
         <a class="navbar-item" href="https://github.com/camptocamp/devops-stack"><i class="fa fa-github-alt"></i>&nbsp;GitHub</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
@@ -57,7 +60,19 @@
     <span class="nav-text">Tutorials</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../../getting_started.html">Getting Started</a>
+    <a class="nav-link" href="../../../tutorials/part_1.html">Part 1: Kubernetes cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/part_2.html">Part 2: Hello Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/part_3.html">Part 3: Deploying an app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/part_4.html">Part 4: Cont. Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../tutorials/part_5.html">Part 5: Monitoring</a>
   </li>
 </ul>
   </li>
@@ -74,6 +89,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../howtos/quickstart_aks.html">AKS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../howtos/quickstart_sks.html">SKS</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../../howtos/quickstart_ocp_ipi_aws.html">OpenShift (IPI) on AWS</a>
@@ -120,16 +138,10 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploy Your App</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../howtos/deploy_own_app.html">Deploy Your App</a>
+    <a class="nav-link" href="../../../howtos/continuous_delivery_gitflow_workflow.html">Continuous Deployment for a Gitflow Workflow</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../howtos/filebeat_logging.html">Filebeat logging</a>
   </li>
 </ul>
   </li>
@@ -164,6 +176,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../openshift4/aws.html">OpenShift 4 on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../sks/exoscale.html">Exoscale SKS</a>
   </li>
 </ul>
   </li>
@@ -382,7 +397,7 @@
 <p><a id="requirement_aws"></a> <a href="#requirement_aws">aws</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.37.0</p>
+<p>~&gt; 3.37</p>
 </div></div></td>
 </tr>
 <tr>
@@ -390,7 +405,7 @@
 <p><a id="requirement_helm"></a> <a href="#requirement_helm">helm</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.0.2</p>
+<p>~&gt; 2.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -398,7 +413,7 @@
 <p><a id="requirement_kubernetes"></a> <a href="#requirement_kubernetes">kubernetes</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.0.2</p>
+<p>~&gt; 2.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -406,7 +421,7 @@
 <p><a id="requirement_local"></a> <a href="#requirement_local">local</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2.0.0</p>
+<p>~&gt; 2.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -414,7 +429,7 @@
 <p><a id="requirement_null"></a> <a href="#requirement_null">null</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.0.0</p>
+<p>~&gt; 3.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -422,7 +437,7 @@
 <p><a id="requirement_random"></a> <a href="#requirement_random">random</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.0.0</p>
+<p>~&gt; 3.0</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -449,7 +464,15 @@
 <p><a id="provider_aws"></a> <a href="#provider_aws">aws</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.37.0</p>
+<p>~&gt; 3.37</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="provider_dns"></a> <a href="#provider_dns">dns</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>n/a</p>
 </div></div></td>
 </tr>
 <tr>
@@ -457,7 +480,7 @@
 <p><a id="provider_random"></a> <a href="#provider_random">random</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>3.0.0</p>
+<p>~&gt; 3.0</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -482,83 +505,85 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_argocd"></a> <a href="#module_argocd">argocd</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_cluster"></a> <a href="#module_cluster">cluster</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/eks/aws</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>15.1.0</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_efs"></a> <a href="#module_efs">efs</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>camptocamp/efs/aws</p>
 </div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_iam_assumable_role_cert_manager"></a> <a href="#module_iam_assumable_role_cert_manager">iam_assumable_role_cert_manager</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>4.0.0</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_iam_assumable_role_cluster_autoscaler"></a> <a href="#module_iam_assumable_role_cluster_autoscaler">iam_assumable_role_cluster_autoscaler</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>4.0.0</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_iam_assumable_role_loki"></a> <a href="#module_iam_assumable_role_loki">iam_assumable_role_loki</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>4.0.0</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_nlb"></a> <a href="#module_nlb">nlb</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/alb/aws</p>
 </div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>6.0.0</p>
 </div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_nlb_private"></a> <a href="#module_nlb_private">nlb_private</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>terraform-aws-modules/alb/aws</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>5.10.0</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -582,7 +607,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/cognito_user_pool_client">aws_cognito_user_pool_client.client</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">aws_cognito_user_pool_client.client</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -590,7 +615,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/iam_policy">aws_iam_policy.cert_manager</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy">aws_iam_policy.cert_manager</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -598,7 +623,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/iam_policy">aws_iam_policy.cluster_autoscaler</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy">aws_iam_policy.cluster_autoscaler</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -606,7 +631,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/iam_policy">aws_iam_policy.loki</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy">aws_iam_policy.loki</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -614,7 +639,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/route53_record">aws_route53_record.wildcard</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record">aws_route53_record.wildcard</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -622,7 +647,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/s3_bucket">aws_s3_bucket.loki</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket">aws_s3_bucket.loki</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -630,7 +655,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/security_group_rule">aws_security_group_rule.workers_ingress_healthcheck_http</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule">aws_security_group_rule.workers_ingress_healthcheck_http</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -638,7 +663,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/resources/security_group_rule">aws_security_group_rule.workers_ingress_healthcheck_https</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule">aws_security_group_rule.workers_ingress_healthcheck_https</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -646,7 +671,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/random/3.0.0/docs/resources/password">random_password.grafana_admin_password</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password">random_password.grafana_admin_password</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -654,7 +679,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/eks_cluster">aws_eks_cluster.cluster</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster">aws_eks_cluster.cluster</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -662,7 +687,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/eks_cluster_auth">aws_eks_cluster_auth.cluster</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster_auth">aws_eks_cluster_auth.cluster</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -670,7 +695,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/iam_policy_document">aws_iam_policy_document.cert_manager</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document">aws_iam_policy_document.cert_manager</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -678,7 +703,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/iam_policy_document">aws_iam_policy_document.cluster_autoscaler</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document">aws_iam_policy_document.cluster_autoscaler</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -686,7 +711,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/iam_policy_document">aws_iam_policy_document.loki</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document">aws_iam_policy_document.loki</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -694,7 +719,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/nat_gateway">aws_nat_gateway.this</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region">aws_region.current</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -702,7 +727,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/region">aws_region.current</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone">aws_route53_zone.this</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -710,7 +735,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/route53_zone">aws_route53_zone.this</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet_ids">aws_subnet_ids.private</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -718,7 +743,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/subnet_ids">aws_subnet_ids.private</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet_ids">aws_subnet_ids.public</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -726,7 +751,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/subnet_ids">aws_subnet_ids.public</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc">aws_vpc.this</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -734,7 +759,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/aws/3.37.0/docs/data-sources/vpc">aws_vpc.this</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/dns/latest/docs/data-sources/a_record_set">dns_a_record_set.nlb</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>data source</p>
@@ -810,10 +835,10 @@
 <p><code>string</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>n/a</p>
+<p><code>null</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>yes</p>
+<p>no</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1077,15 +1102,55 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="input_map_accounts"></a> <a href="#input_map_accounts">map_accounts</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional AWS account numbers to add to the aws-auth configmap. See examples/basic/variables.tf in the terraform-aws-eks module&#8217;s code for example format.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>list(string)</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>[]</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>no</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="input_map_roles"></a> <a href="#input_map_roles">map_roles</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Additional IAM roles to add to the aws-auth configmap. See examples/basic/variables.tf for example format.</p>
+<p>Additional IAM roles to add to the aws-auth configmap. See examples/basic/variables.tf in the terraform-aws-eks module&#8217;s code for example format.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>list(object({
     rolearn  = string
+    username = string
+    groups   = list(string)
+  }))</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>[]</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>no</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="input_map_users"></a> <a href="#input_map_users">map_users</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Additional IAM users to add to the aws-auth configmap. See examples/basic/variables.tf in the terraform-aws-eks module&#8217;s code for example format.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>list(object({
+    userarn  = string
     username = string
     groups   = list(string)
   }))</code></pre>
@@ -1150,7 +1215,7 @@
 <p>A list of repositories to add to ArgoCD.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>map(string)</code></p>
+<p><code>map(map(string))</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>{}</code></p>
@@ -1191,6 +1256,23 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>yes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="input_wait_for_app_of_apps"></a> <a href="#input_wait_for_app_of_apps">wait_for_app_of_apps</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allow to disable wait for app of apps</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>bool</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>true</code></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>no</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1251,6 +1333,22 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The URL of the ArgoCD server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="output_argocd_server_admin_password"></a> <a href="#output_argocd_server_admin_password">argocd_server_admin_password</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The ArgoCD admin password.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="output_base_domain"></a> <a href="#output_base_domain">base_domain</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>n/a</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1358,6 +1456,9 @@
   window.antora.pagePath = '/devops-stack/latest/references/terraform_modules/eks/aws.html'
 </script>
 <script src="../../../../../_/js/site.js"></script>
+<script src="../../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../../_/js/vendor/search.js"></script>
+<script async src="../../../../../_/../search-index.js"></script>
 <script async src="../../../../../_/js/vendor/terraform.js"></script>
 <script async src="../../../../../_/js/vendor/highlight.js"></script>
   </body>

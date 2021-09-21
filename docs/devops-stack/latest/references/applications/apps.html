@@ -25,6 +25,9 @@
     </div>    
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
         <a class="navbar-item" href="https://github.com/camptocamp/devops-stack"><i class="fa fa-github-alt"></i>&nbsp;GitHub</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
@@ -57,7 +60,19 @@
     <span class="nav-text">Tutorials</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../getting_started.html">Getting Started</a>
+    <a class="nav-link" href="../../tutorials/part_1.html">Part 1: Kubernetes cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_2.html">Part 2: Hello Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_3.html">Part 3: Deploying an app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_4.html">Part 4: Cont. Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_5.html">Part 5: Monitoring</a>
   </li>
 </ul>
   </li>
@@ -74,6 +89,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/quickstart_aks.html">AKS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/quickstart_sks.html">SKS</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/quickstart_ocp_ipi_aws.html">OpenShift (IPI) on AWS</a>
@@ -120,16 +138,10 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploy Your App</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../howtos/deploy_own_app.html">Deploy Your App</a>
+    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continuous Deployment for a Gitflow Workflow</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howtos/filebeat_logging.html">Filebeat logging</a>
   </li>
 </ul>
   </li>
@@ -164,6 +176,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../terraform_modules/openshift4/aws.html">OpenShift 4 on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../terraform_modules/sks/exoscale.html">Exoscale SKS</a>
   </li>
 </ul>
   </li>
@@ -384,6 +399,9 @@ platform used. To enable/disable apps please see
   window.antora.pagePath = '/devops-stack/latest/references/applications/apps.html'
 </script>
 <script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/search.js"></script>
+<script async src="../../../../_/../search-index.js"></script>
 <script async src="../../../../_/js/vendor/terraform.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
   </body>

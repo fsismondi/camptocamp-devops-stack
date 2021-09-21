@@ -25,6 +25,9 @@
     </div>    
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        <div class="navbar-item">
+          <input id="search-input" type="text" placeholder="Search docs">
+        </div>
         <a class="navbar-item" href="https://github.com/camptocamp/devops-stack"><i class="fa fa-github-alt"></i>&nbsp;GitHub</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
@@ -57,7 +60,19 @@
     <span class="nav-text">Tutorials</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../getting_started.html">Getting Started</a>
+    <a class="nav-link" href="../../tutorials/part_1.html">Part 1: Kubernetes cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_2.html">Part 2: Hello Kubernetes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_3.html">Part 3: Deploying an app</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_4.html">Part 4: Cont. Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/part_5.html">Part 5: Monitoring</a>
   </li>
 </ul>
   </li>
@@ -74,6 +89,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/quickstart_aks.html">AKS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../howtos/quickstart_sks.html">SKS</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../howtos/quickstart_ocp_ipi_aws.html">OpenShift (IPI) on AWS</a>
@@ -120,16 +138,10 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Deploy Your App</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../howtos/deploy_own_app.html">Deploy Your App</a>
+    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continuous Deployment for a Gitflow Workflow</a>
   </li>
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../howtos/continuous_delivery_gitflow_workflow.html">Continous Deployment for a Gitflow Workflow</a>
-  </li>
-</ul>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../howtos/filebeat_logging.html">Filebeat logging</a>
   </li>
 </ul>
   </li>
@@ -164,6 +176,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="openshift4/aws.html">OpenShift 4 on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="sks/exoscale.html">Exoscale SKS</a>
   </li>
 </ul>
   </li>
@@ -390,6 +405,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="requirement_htpasswd"></a> <a href="#requirement_htpasswd">htpasswd</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>~&gt; 0.9</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="requirement_jwt"></a> <a href="#requirement_jwt">jwt</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -398,10 +421,34 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="requirement_kubernetes"></a> <a href="#requirement_kubernetes">kubernetes</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>~&gt; 2.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="requirement_null"></a> <a href="#requirement_null">null</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>~&gt; 3.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="requirement_random"></a> <a href="#requirement_random">random</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>~&gt; 3.0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="requirement_time"></a> <a href="#requirement_time">time</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>0.6.0</p>
+<p>~&gt; 0.6</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -433,6 +480,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="provider_htpasswd"></a> <a href="#provider_htpasswd">htpasswd</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>~&gt; 0.9</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="provider_jwt"></a> <a href="#provider_jwt">jwt</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -444,7 +499,7 @@
 <p><a id="provider_null"></a> <a href="#provider_null">null</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>n/a</p>
+<p>~&gt; 3.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -452,7 +507,7 @@
 <p><a id="provider_random"></a> <a href="#provider_random">random</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>n/a</p>
+<p>~&gt; 3.0</p>
 </div></div></td>
 </tr>
 <tr>
@@ -460,7 +515,7 @@
 <p><a id="provider_time"></a> <a href="#provider_time">time</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>0.6.0</p>
+<p>~&gt; 0.6</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -508,6 +563,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://registry.terraform.io/providers/loafoe/htpasswd/latest/docs/resources/password">htpasswd_password.argocd_server_admin</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>resource</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="https://registry.terraform.io/providers/camptocamp/jwt/latest/docs/resources/hashed_token">jwt_hashed_token.argocd</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -517,6 +580,14 @@
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource">null_resource.wait_for_app_of_apps</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>resource</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password">random_password.argocd_server_admin</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -548,7 +619,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://registry.terraform.io/providers/hashicorp/time/0.6.0/docs/resources/static">time_static.iat</a></p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/static">time_static.iat</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>resource</p>
@@ -978,7 +1049,7 @@
 <p>A list of repositories to add to ArgoCD.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>map(string)</code></p>
+<p><code>map(map(string))</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>{}</code></p>
@@ -1073,6 +1144,14 @@
 <p>The token to set in ARGOCD_AUTH_TOKEN environment variable.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="output_argocd_server_admin_password"></a> <a href="#output_argocd_server_admin_password">argocd_server_admin_password</a></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The ArgoCD admin password.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1090,6 +1169,9 @@
   window.antora.pagePath = '/devops-stack/latest/references/terraform_modules/argocd-helm.html'
 </script>
 <script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/lunr.js"></script>
+<script src="../../../../_/js/vendor/search.js"></script>
+<script async src="../../../../_/../search-index.js"></script>
 <script async src="../../../../_/js/vendor/terraform.js"></script>
 <script async src="../../../../_/js/vendor/highlight.js"></script>
   </body>
