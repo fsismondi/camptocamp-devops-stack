@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.48.0](https://www.github.com/fsismondi/devops-stack/compare/v0.47.0...v0.48.0) (2021-09-21)
+
+
+### Features
+
+* **aks:** add kubelet identity to outputs ([f883650](https://www.github.com/fsismondi/devops-stack/commit/f883650310fbd6e6828af4531d9ddf1855599653))
+* **aks:** extend accepted params for node pools ([#780](https://www.github.com/fsismondi/devops-stack/issues/780)) ([831557f](https://www.github.com/fsismondi/devops-stack/commit/831557fe323b2bb90ae70685c6b4c0cd0fe9de6c))
+* **docs:** add SKS quickstart ([#784](https://www.github.com/fsismondi/devops-stack/issues/784)) ([e26a5f1](https://www.github.com/fsismondi/devops-stack/commit/e26a5f18fab283b35548629eac2d9b3b2b9e2275))
+* refact tutorials/howtos, add skeleton for tutorials ([b77031e](https://www.github.com/fsismondi/devops-stack/commit/b77031e9d8fa6637e11161dc8ef6d5b3cd05b6cc))
+* refact tutorials/howtos, add skeleton for tutorials ([7c2fb51](https://www.github.com/fsismondi/devops-stack/commit/7c2fb51aa49e608675c0f4fde4abc864219b4432))
+
+
+### Bug Fixes
+
+* **doc:** homogenize name 'DevOps Stack' ([95c9e82](https://www.github.com/fsismondi/devops-stack/commit/95c9e82449bba7f758dec0ebb9be46d8d481fa3b))
+
 ## [0.47.0](https://www.github.com/camptocamp/devops-stack/compare/v0.46.0...v0.47.0) (2021-09-15)
 
 
