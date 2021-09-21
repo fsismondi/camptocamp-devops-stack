@@ -8,7 +8,7 @@ demo: create a deployment and a service file
 
 == Deploying the app
 
-demo: deploy with kubectl, explore pod logs with k9s
+demo: deploy with kubectl, explore pod logs
 
 == Templating your app with Helm
 

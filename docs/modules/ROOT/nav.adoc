@@ -1,5 +1,6 @@
 * xref:ROOT:index.adoc[Home]
 * Tutorials
+** xref:ROOT:tutorials/getting_started.adoc[Getting Started]
 ** xref:ROOT:tutorials/part_1.adoc[Part 1: Kubernetes cluster]
 ** xref:ROOT:tutorials/part_2.adoc[Part 2: Hello Kubernetes]
 ** xref:ROOT:tutorials/part_3.adoc[Part 3: Deploying an app]
