@@ -18,7 +18,7 @@ locals {
     },
   }
 
-  router_node_pool = coalesce(var.node_pool.0.name, "router-${var.cluster_name}")
+  router_node_pool = coalesce(var.node_pools.0.name, "router-${var.cluster_name}")
   node_pools       = coalesce({for pool in var.node_pools:  pool.name => pool}, local.default_node_pools)
   cluster_issuer  = (length(local.node_pools) > 1) ? "letsencrypt-prod" : "ca-issuer"
   keycloak_user_map = { for username, infos in var.keycloak_users : username => merge(infos, tomap({password = random_password.keycloak_passwords[username].result})) }
