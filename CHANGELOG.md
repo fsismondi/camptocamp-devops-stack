@@ -1,5 +1,34 @@
 # Changelog
 
+## [0.50.0](https://www.github.com/fsismondi/devops-stack/compare/v0.49.0...v0.50.0) (2021-12-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* homogenize node pools attr for k3s distro
+* homogenize node pools attr for sks distro
+* homogenize node pools attr for aks distro
+* homogenize node pools attr for aws distro
+* homogenize node pools attr for cce distro
+
+### Features
+
+* add examples in node_pool descriptions ([5deefc1](https://www.github.com/fsismondi/devops-stack/commit/5deefc1ffec176ce05973cde99a418a2e6b7dc90))
+
+
+### Bug Fixes
+
+* doc ([2cf99dc](https://www.github.com/fsismondi/devops-stack/commit/2cf99dc4c0a30088d9ed2cc5f5b96162c9daedfd))
+
+
+### Code Refactoring
+
+* homogenize node pools attr for aks distro ([183e04a](https://www.github.com/fsismondi/devops-stack/commit/183e04a8c0f85419fb6d4c3b5d8908ae839045fb))
+* homogenize node pools attr for aws distro ([508d1ab](https://www.github.com/fsismondi/devops-stack/commit/508d1ab38508103ce8359264cb8665ca586b9a2c))
+* homogenize node pools attr for cce distro ([9289534](https://www.github.com/fsismondi/devops-stack/commit/928953458ac223b68426e24ba311ff6306bc2016))
+* homogenize node pools attr for k3s distro ([69b1158](https://www.github.com/fsismondi/devops-stack/commit/69b115852570138b4056cdcd5420bad7c30a8100))
+* homogenize node pools attr for sks distro ([bc3a4f9](https://www.github.com/fsismondi/devops-stack/commit/bc3a4f9a7b536e2d92526c5f492816dab9945fb8))
+
 ## [0.49.0](https://www.github.com/camptocamp/devops-stack/compare/v0.48.0...v0.49.0) (2021-11-19)
 
 
