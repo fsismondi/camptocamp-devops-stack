@@ -34,9 +34,9 @@ The `k3s/docker` Terraform module provides a way to install and configure:
 
 [cols="a,a,a",options="header,autowidth"]
 |===
-|Name |Source |Version
-|[[module_argocd]] <<module_argocd,argocd>> |../../argocd-helm |
-|[[module_cluster]] <<module_cluster,cluster>> |camptocamp/k3s/docker |1.0.1
+|Name|Source|Version|
+|[[module_argocd]] <<module_argocd,argocd>>|../../argocd-helm|
+|[[module_cluster]] <<module_cluster,cluster>>|camptocamp/k3s/docker|1.0.1
 |===
 
 == Resources
@@ -122,7 +122,7 @@ The `k3s/docker` Terraform module provides a way to install and configure:
 |[[input_k3s_version]] <<input_k3s_version,k3s_version>>
 |The K3s version to use
 |`string`
-|`"v1.21.6+k3s1"`
+|`"v1.21.6-k3s1"`
 |no
 
 |[[input_keycloak_users]] <<input_keycloak_users,keycloak_users>>
@@ -139,6 +139,36 @@ The `k3s/docker` Terraform module provides a way to install and configure:
     "name": "Doe"
   }
 }
+----
+
+|no
+
+|[[input_node_pools]] <<input_node_pools,node_pools>>
+|A list of nodes pools to be provisioned for the cluster.
+|
+
+[source]
+----
+list(object({
+    name        = string
+    node_count  = number
+    node_labels = list(string)
+    node_taints = list(string)
+  }))
+----
+
+|
+
+[source]
+----
+[
+  {
+    "name": "default",
+    "node_count": 2,
+    "node_labels": [],
+    "node_taints": []
+  }
+]
 ----
 
 |no
@@ -195,41 +225,13 @@ set(object({
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |The source target revision of ArgoCD's app of apps.
 |`string`
-|`"master"`
+|`"v0.49.0"`
 |no
 
 |[[input_wait_for_app_of_apps]] <<input_wait_for_app_of_apps,wait_for_app_of_apps>>
-|Allow to disable wait for app of apps
+|Allow to disable wait for app of apps.
 |`bool`
 |`true`
-|no
-
-|[[input_worker_groups]] <<input_worker_groups,worker_groups>>
-|A map defining worker group configurations
-|
-
-[source]
-----
-map(object({
-    node_count  = number
-    node_labels = list(string)
-    node_taints = list(string)
-  }))
-----
-
-|
-
-[source]
-----
-{
-  "default": {
-    "node_count": 2,
-    "node_labels": [],
-    "node_taints": []
-  }
-}
-----
-
 |no
 
 |===
