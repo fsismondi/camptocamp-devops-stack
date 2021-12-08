@@ -510,21 +510,19 @@
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_argocd"></a> <a href="#module_argocd">argocd</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a id="module_cluster"></a> <a href="#module_cluster">cluster</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Azure/aks/azurerm</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4.13.0</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1036,13 +1034,30 @@
 <p><a id="input_node_pools"></a> <a href="#input_node_pools">node_pools</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>List of node pools with minimal configuration</p>
+<p>A list of nodes pools to be provisioned for the cluster.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>list(object({
+    name                = string
+    vm_size             = string
+    node_count          = number
+    availability_zones  = list(string)
+    enable_auto_scaling = bool
+    os_disk_size_gb     = number
+    os_type             = string
+    vnet_subnet_id      = string
+    mode                = string
+    node_labels         = list(string)
+    node_taints         = list(string)
+    max_count           = number
+    min_count           = number
+    max_pods            = number
+  }))</code></pre>
+</div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>map(any)</code></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>{}</code></p>
+<p><code>[]</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>no</p>
@@ -1171,7 +1186,7 @@
 <p><code>string</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>"master"</code></p>
+<p><code>"v0.49.0"</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>no</p>
@@ -1199,7 +1214,7 @@
 <p><a id="input_wait_for_app_of_apps"></a> <a href="#input_wait_for_app_of_apps">wait_for_app_of_apps</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Allow to disable wait for app of apps</p>
+<p>Allow to disable wait for app of apps.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>bool</code></p>
