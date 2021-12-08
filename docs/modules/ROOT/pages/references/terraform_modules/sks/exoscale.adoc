@@ -119,6 +119,32 @@ The `sks/exoscale` Terraform module provides a way to install and configure:
 |`"1.21.6"`
 |no
 
+|[[input_node_pools]] <<input_node_pools,node_pools>>
+|A list of nodes pools to be provisioned for the cluster.
+Each node_pool should include at least a `name` key.
+Entry node_pools.0, if defined, acts as router_node_pool, else a default one will be created.
+
+Example:
+
+[source]
+----
+node_pools = [
+  {
+    name = infra
+  },
+  {
+    name = prod
+  },
+  {
+    name = int
+  }
+]
+----
+
+|`list(any)`
+|`[]`
+|no
+
 |[[input_oidc]] <<input_oidc,oidc>>
 |OIDC configuration for core applications.
 |
