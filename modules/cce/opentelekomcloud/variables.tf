@@ -29,15 +29,28 @@ variable "cluster_version" {
   default     = "v1.19.8-r0"
 }
 
-variable "node_pools" {
-  description = "Map of map of node pools to create."
-  type        = map(map(any))
-  default     = {}
-}
-
 variable "keycloak_users" {
   description = "List of keycloak users"
   type        = map(map(string))
   default = {}
 }
 
+variable "node_pools" {
+  description = <<-EOT
+    A list of nodes pools to be provisioned for the cluster. Must include
+    Example:
+    node_pools = [
+      {
+        name = infra
+      },
+      {
+        name = prod
+      },
+      {
+        name = int
+      }
+    ]
+  EOT
+  type = list(any)
+  default = []
+}
