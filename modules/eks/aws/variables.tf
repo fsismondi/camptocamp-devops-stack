@@ -96,10 +96,26 @@ variable "enable_cluster_autoscaler" {
 variable "node_pools" {
   description = <<-EOF
     A list of nodes pools to be provisioned for the cluster.
+    Each node_pool should include at least a `name` key.
     Entry node_pools.0, if defined, acts as ingress node pool, else a default one will be created.
     See provider `terraform-aws-modules/eks/aws` workers_group_defaults for valid keys.
-  EOF
 
+    Example:
+
+    ```
+    node_pools = [
+      {
+        name = infra
+      },
+      {
+        name = prod
+      },
+      {
+        name = int
+      }
+    ]
+    ```
+  EOF
   type = list(any)
   default = []
 }

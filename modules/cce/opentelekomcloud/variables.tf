@@ -37,8 +37,12 @@ variable "keycloak_users" {
 
 variable "node_pools" {
   description = <<-EOT
-    A list of nodes pools to be provisioned for the cluster. Must include
+    A list of nodes pools to be provisioned for the cluster.
+    Each node_pool should include at least a `name` key.
+
     Example:
+
+    ```
     node_pools = [
       {
         name = infra
@@ -50,6 +54,7 @@ variable "node_pools" {
         name = int
       }
     ]
+    ```
   EOT
   type = list(any)
   default = []
