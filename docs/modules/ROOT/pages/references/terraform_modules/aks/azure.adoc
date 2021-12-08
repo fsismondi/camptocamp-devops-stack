@@ -177,28 +177,30 @@ list(object({
 
 |[[input_node_pools]] <<input_node_pools,node_pools>>
 |A list of nodes pools to be provisioned for the cluster.
-|
+Each node_pool should include at least a `name` key.
+See [provider documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster_node_pool) for allowed
+
+Example:
 
 [source]
 ----
-list(object({
-    name                = string
-    vm_size             = string
-    node_count          = number
-    availability_zones  = list(string)
-    enable_auto_scaling = bool
-    os_disk_size_gb     = number
-    os_type             = string
-    vnet_subnet_id      = string
-    mode                = string
-    node_labels         = list(string)
-    node_taints         = list(string)
-    max_count           = number
-    min_count           = number
-    max_pods            = number
-  }))
+node_pools = [
+  {
+    name       = "infra"
+    node_count = 1
+  },
+  {
+    name       = "prod"
+    node_count = 2
+  },
+  {
+    name       = "int"
+    node_count = 1
+  }
+]
 ----
 
+|`list(any)`
 |`[]`
 |no
 
