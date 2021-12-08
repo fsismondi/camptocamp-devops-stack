@@ -22,20 +22,34 @@ variable "cluster_endpoint" {
   default     = null
 }
 
-variable "worker_groups" {
-  description = "A map defining worker group configurations"
+variable "node_pools" {
+    description = <<-EOF
+    A list of nodes pools to be provisioned for the cluster.
+    Each node_pool should include at least a `name` key.
+    Entry node_pools.0, if defined, acts as ingress node pool, else a default one will be created.
+    See provider `terraform-aws-modules/eks/aws` workers_group_defaults for valid keys.
 
-  type = map(object({
-    node_count  = number
-    node_labels = list(string)
-    node_taints = list(string)
-  }))
+    Example:
 
-  default = {
-    "default" = {
+    ```
+    node_pools = [
+      {
+        name = infra
+      },
+      {
+        name = prod
+      },
+      {
+        name = int
+      }
+    ]
+    ```
+  EOF
+  type = list(any)
+  default = [{
+      name = "default"
       node_count  = 2
       node_labels = []
       node_taints = []
-    }
-  }
+  }]
 }
