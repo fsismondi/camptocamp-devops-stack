@@ -850,17 +850,31 @@
 <p><a id="input_node_pools"></a> <a href="#input_node_pools">node_pools</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A list of nodes pools to be provisioned for the cluster.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>list(object({
-    name        = string
-    node_count  = number
-    node_labels = list(string)
-    node_taints = list(string)
-  }))</code></pre>
+<p>A list of nodes pools to be provisioned for the cluster.
+Each node_pool should include at least a <code>name</code> key.
+Entry node_pools.0, if defined, acts as ingress node pool, else a default one will be created.
+See provider <code>terraform-aws-modules/eks/aws</code> workers_group_defaults for valid keys.</p>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>node_pools = [
+  {
+    name = infra
+  },
+  {
+    name = prod
+  },
+  {
+    name = int
+  }
+]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>list(any)</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">

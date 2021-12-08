@@ -1034,27 +1034,33 @@
 <p><a id="input_node_pools"></a> <a href="#input_node_pools">node_pools</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A list of nodes pools to be provisioned for the cluster.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>list(object({
-    name                = string
-    vm_size             = string
-    node_count          = number
-    availability_zones  = list(string)
-    enable_auto_scaling = bool
-    os_disk_size_gb     = number
-    os_type             = string
-    vnet_subnet_id      = string
-    mode                = string
-    node_labels         = list(string)
-    node_taints         = list(string)
-    max_count           = number
-    min_count           = number
-    max_pods            = number
-  }))</code></pre>
+<p>A list of nodes pools to be provisioned for the cluster.
+Each node_pool should include at least a <code>name</code> key.
+See [provider documentation](<a href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster_node_pool" class="bare">https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster_node_pool</a>) for allowed</p>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>node_pools = [
+  {
+    name       = "infra"
+    node_count = 1
+  },
+  {
+    name       = "prod"
+    node_count = 2
+  },
+  {
+    name       = "int"
+    node_count = 1
+  }
+]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>list(any)</code></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>[]</code></p>
