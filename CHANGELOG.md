@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.54.2](https://www.github.com/fsismondi/devops-stack/compare/v0.54.1...v0.54.2) (2022-02-16)
+
+
+### Bug Fixes
+
+* **aks:** bump default ochestration version for nodes to v1.21.9, v1.21.2 was dropped by Azure ([115a1a1](https://www.github.com/fsismondi/devops-stack/commit/115a1a1e0693084dcfb2f953457fbfb8bd8af15a))
+
 ### [0.54.1](https://www.github.com/camptocamp/devops-stack/compare/v0.54.0...v0.54.1) (2022-02-16)
 
 
