@@ -73,17 +73,18 @@ module "cluster" {
   orchestrator_version = var.kubernetes_version
   sku_tier             = var.sku_tier
 
-  resource_group_name = data.azurerm_resource_group.this.name
-  prefix              = var.cluster_name
-  network_plugin      = "azure"
-  network_policy      = var.network_policy
-  vnet_subnet_id      = var.vnet_subnet_id
-  agents_pool_name    = var.agents_pool_name
-  agents_labels       = merge({ "devops-stack.io/nodepool" = var.agents_pool_name }, var.agents_labels)
-  agents_count        = var.agents_count
-  agents_size         = var.agents_size
-  agents_max_pods     = var.agents_max_pods
-  os_disk_size_gb     = var.os_disk_size_gb
+  resource_group_name       = data.azurerm_resource_group.this.name
+  prefix                    = var.cluster_name
+  network_plugin            = "azure"
+  network_policy            = var.network_policy
+  vnet_subnet_id            = var.vnet_subnet_id
+  net_profile_outbound_type = var.net_profile_outbound_type
+  agents_pool_name          = var.agents_pool_name
+  agents_labels             = merge({ "devops-stack.io/nodepool" = var.agents_pool_name }, var.agents_labels)
+  agents_count              = var.agents_count
+  agents_size               = var.agents_size
+  agents_max_pods           = var.agents_max_pods
+  os_disk_size_gb           = var.os_disk_size_gb
 
   public_ssh_key = var.public_ssh_key
 

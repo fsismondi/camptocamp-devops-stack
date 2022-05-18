@@ -19,6 +19,10 @@ variable "vnet_subnet_id" {
   type        = string
 }
 
+variable "net_profile_outbound_type" {
+  description = "The outbound (egress) routing method which should be used for this Kubernetes Cluster. Possible values are loadBalancer and userDefinedRouting."
+  type        = string
+}
 
 variable "agents_pool_name" {
   description = "The default Azure AKS agentpool (nodepool) name."
